@@ -1,0 +1,66 @@
+html = liqpay.cnb_form({
+    'action': 'pay',
+    'amount': '12',
+    'currency': 'UAH',
+    'description': 'description text',
+    'order_id': 'order_id_1',
+    'version': '3'
+})
+{'result': 'error', 'action': 'pay', 'status': 'failure', 'err_code': 'err_missing',
+ 'err_description': 'Required parameter not passed description', 'version': 3, 'type': 'buy',
+ 'public_key': 'sandbox_i11930087908', 'acq_id': 414963, 'order_id': 'order_id_1',
+ 'liqpay_order_id': 'BAOPDEQ71678510026988601', 'amount': 1.0, 'currency': 'USD', 'is_3ds': False,
+ 'key': 'description', 'code': 'err_missing'}
+{'result': 'ok', 'action': 'pay', 'amount': 1.0, 'answer_text': 'Privat24', 'bot_channel': 'Privat24',
+ 'bot_in_contacts': False, 'bot_name': 'Privatbank', 'bot_url': 'Privat24', 'currency': 'USD',
+ 'description': 'Invoice',
+ 'href': 'https://www.liqpay.ua/apipay/invoice/invoice_1678520364683749_8577970_Zhv68ls48lPlOsaXwFHO',
+ 'id': 6335498, 'order_id': 'order_id_3', 'receiver_type': 'phone', 'receiver_value': '380950000001',
+ 'status': 'invoice_wait', 'token': 'invoice_1678520364683749_8577970_Zhv68ls48lPlOsaXwFHO'}
+
+with open('index.html', 'w') as f:
+#     f.write(html)
+# send_message(chat_id=chat_id, text=html)
+# # print(2)
+# # send_message(chat_id=chat_id, text='Привет!')
+# bot = Bot(token=get_from_env('TELEGRAM_BOT_TOKEN'))
+# bot.send_message(chat_id=chat_id, text=html, parse_mode=ParseMode.HTML)
+# print(2)
+
+{'result': 'ok', 'action': 'pay', 'amount': 12.0,
+'answer_text': 'Privat24', 'bot_channel': 'Privat24',
+'bot_in_contacts': False, 'bot_name': 'Privatbank',
+'bot_url': 'Privat24', 'currency': 'UAH',
+'description': '395409055',
+'href': 'https://www.liqpay.ua/apipay/invoice/invoice_1678521429827832_8663842_tfBbrNRFTuK72qXrJ83K',
+'id': 6335560, 'order_id': 'order_id_1281',
+'receiver_type': 'phone', 'receiver_value': '380950000001',
+'status': 'invoice_wait', 'token': 'invoice_1678521429827832_8663842_tfBbrNRFTuK72qXrJ83K'}
+# 395409055
+
+_________________________________________________________________________________
+ЗАПУСК NGROK!!!
+
+1. Запускаем сервер Django или Flask.
+
+2. Копируем его http: http://127.0.0.1:8000 или http://127.0.0.1:5000
+
+3. Делаем запрос с файле с ngrok.exe Пример: ngrok http http://127.0.0.1:5000
+
+4. Переходим по ссылке подобной https://8eb8-46-33-250-161.eu.ngrok.io/
+
+5. Нажимаем перейти на сайт и видим нашу интернет сраницу!)))
+
+GET /                          200 OK
+GET /favicon.ico               404 NOT FOUND
+
+ngrok http 5000  -  Запуск ngrok на сервере 5000.
+
+Установило Webhook для Телеграмм бота!
+curl -F "url=https://8eb8-46-33-250-161.eu.ngrok.io/" https://api.telegram.org/bot5822711406:AAEGJNrVXKR7Hw4BDTUSq0NQNwPFxPDtlNg/setWebhook
+{"ok":true,"result":true,"description":"Webhook was set"}
+
+Удалило мне Webhook
+curl --location --request POST "https://api.telegram.org/bot5822711406:AAEGJNrVXKR7Hw4BDTUSq0NQNwPFxPDtlNg/setWebhook" --header "Content-Type: application/json" --data-raw "{"url": "https://8eb8-46-33-250-161.eu.ngrok.io/"}"
+
+Уничтожение ngrok: tasklist | findstr "ngrok"  -  найти,  taskkill /PID <ID_процесса>  -  убить гада.
